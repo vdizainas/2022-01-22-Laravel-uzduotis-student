@@ -17,7 +17,7 @@ class AttendanceGroupFactory extends Factory
             'name' => $this->faker->company(),
             'description' => $this->faker->paragraph(),
             'difficulty' => $this->faker->randomElement(['a', 'b', 'c', 'd', 'e']),
-            'school_id' => $this->faker->numberBetween(1, 100)
+            'school_id' => $this->faker->numberBetween(1, 50)
         ];
     }
 }

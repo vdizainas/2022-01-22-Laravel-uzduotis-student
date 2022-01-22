@@ -28,13 +28,13 @@ Route::prefix('student')->group(function() {
 });
 
 Route::prefix('attendance_group')->group(function() {
-    Route::get('', 'App\Http\Controllers\AttendanceGroupController@index')->name('attendanceGroup.index');
-    Route::get('create', 'App\Http\Controllers\AttendanceGroupController@create')->name('attendanceGroup.create');
-    Route::post('store', 'App\Http\Controllers\AttendanceGroupController@store')->name('attendanceGroup.store');
-    Route::get('edit/{attendanceGroup}', 'App\Http\Controllers\AttendanceGroupController@edit')->name('attendanceGroup.edit');
-    Route::post('update/{attendanceGroup}', 'App\Http\Controllers\AttendanceGroupController@update')->name('attendanceGroup.update');
-    Route::post('destroy/{attendanceGroup}', 'App\Http\Controllers\AttendanceGroupController@destroy')->name('attendanceGroup.destroy');
-    Route::get('show/{attendanceGroup}', 'App\Http\Controllers\AttendanceGroupController@show')->name('attendanceGroup.show');
+    Route::get('', 'App\Http\Controllers\AttendanceGroupController@index')->name('attendance_group.index');
+    Route::get('create', 'App\Http\Controllers\AttendanceGroupController@create')->name('attendance_group.create');
+    Route::post('store', 'App\Http\Controllers\AttendanceGroupController@store')->name('attendance_group.store');
+    Route::get('edit/{attendance_group}', 'App\Http\Controllers\AttendanceGroupController@edit')->name('attendance_group.edit');
+    Route::post('update/{attendance_group}', 'App\Http\Controllers\AttendanceGroupController@update')->name('attendance_group.update');
+    Route::post('destroy/{attendance_group}', 'App\Http\Controllers\AttendanceGroupController@destroy')->name('attendance_group.destroy');
+    Route::get('show/{attendance_group}', 'App\Http\Controllers\AttendanceGroupController@show')->name('attendance_group.show');
 });
 
 Route::prefix('school')->group(function() {

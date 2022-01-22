@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         // Student::factory()->count(1000)->create(); 
 
         $this->call([
-            AttendanceGroupSeeder::class,
             SchoolSeeder::class,
+            AttendanceGroupSeeder::class,
             StudentSeeder::class
         ]);
 

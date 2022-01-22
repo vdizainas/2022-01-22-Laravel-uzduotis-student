@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Students</title>
+    <title>Attendance group</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
 <body>
@@ -21,32 +21,40 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Surname</th>
-              <th>Group ID</th>
-              <th>Photo</th>
+              <th>Description</th>
+              <th>Difficulty</th>
+              <th>School ID</th>
+              <th>Students</th>
               <th>Action</th>
             </tr>
 
-            @foreach ($students as $student)            
-              <tr>
-                <td>{{$student->id}}</td>
-                <td>{{$student->name}}</td>
-                <td>{{$student->surname}}</td>
-                {{-- <td>{{$student->group_id}}</td> --}}
-                <td>{{$student->studentGroup->name}}</td>
-                <td><img src="{{$student->image_url}}" width="100"/></td>
-                <td>
-                  {{-- <div class="d-flex">
-                    <a class="btn btn-secondary btn-sm me-2" href="{{route('client.edit', [$client])}}">Edit</a>
-                    <a class="btn btn-outline-secondary btn-sm me-2" href="{{route('client.show', [$client])}}">Preview</a>
-                    <form method="post" action="{{route('client.destroy', [$client])}}" >
-                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                      @csrf
-                    </form>             
-                  </div>      --}}
-                </td>               
-              </tr>    
-            @endforeach
+            @foreach ($attendance_groups as $attendance_group)            
+            <tr>
+              <td>{{$attendance_group->id}}</td>
+              <td>{{$attendance_group->name}}</td>
+              <td>{{$attendance_group->description}}</td>
+              <td>{{$attendance_group->difficulty}}</td>
+              <td>{{$attendance_group->GroupSchool->name}}</td>
+              <td>{{$attendance_group->school_id}}</td>
+              <td>
+                @foreach ($attendance_group->GroupStudents as $student)
+                    <table>
+                      <td>{{$student->name}}</td>
+                      <td>{{$student->surname}}</td>
+                    </table>
+                @endforeach
+              </td>
+                {{-- <div class="d-flex">
+                  <a class="btn btn-secondary btn-sm me-2" href="{{route('client.edit', [$client])}}">Edit</a>
+                  <a class="btn btn-outline-secondary btn-sm me-2" href="{{route('client.show', [$client])}}">Preview</a>
+                  <form method="post" action="{{route('client.destroy', [$client])}}" >
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    @csrf
+                  </form>             
+                </div>      --}}
+              </td>               
+            </tr>    
+          @endforeach
 
           </table>
           {{-- <div class="text-center">

@@ -15,7 +15,6 @@ class StudentController extends Controller
      */
     public function index()
     {
-        // $groups = AttendanceGroup::all();
         $students = Student::all();
 
         return view('student.index', ['students' => $students]);

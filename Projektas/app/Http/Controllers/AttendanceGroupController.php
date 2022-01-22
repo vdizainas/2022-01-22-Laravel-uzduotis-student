@@ -15,7 +15,8 @@ class AttendanceGroupController extends Controller
      */
     public function index()
     {
-        //
+        $attendance_groups = AttendanceGroup::all();
+        return view('attendance_group.index', ['attendance_groups' => $attendance_groups]);
     }
 
     /**
