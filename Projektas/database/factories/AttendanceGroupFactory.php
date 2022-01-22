@@ -14,7 +14,10 @@ class AttendanceGroupFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->company(),
+            'description' => $this->faker->paragraph(),
+            'difficulty' => $this->faker->randomElement(['a', 'b', 'c', 'd', 'e']),
+            'school_id' => $this->faker->numberBetween(1, 100)
         ];
     }
 }

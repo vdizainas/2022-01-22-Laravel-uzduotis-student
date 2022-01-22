@@ -14,7 +14,10 @@ class SchoolFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->company(),
+            'description' => $this->faker->paragraph(3),
+            'place' => $this->faker->city(),
+            'phone' => $this->faker->phoneNumber()
         ];
     }
 }
