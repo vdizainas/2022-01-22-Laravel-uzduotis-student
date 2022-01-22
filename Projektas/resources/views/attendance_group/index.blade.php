@@ -25,7 +25,7 @@
               <th>Difficulty</th>
               <th>School ID</th>
               <th>Students</th>
-              <th>Action</th>
+              <th>Students names</th>
             </tr>
 
             @foreach ($attendance_groups as $attendance_group)            
