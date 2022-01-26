@@ -24,7 +24,7 @@
               <th>Description</th>
               <th>Difficulty</th>
               <th>School ID</th>
-              <th>Students</th>
+              
               <th>Students names</th>
             </tr>
 
@@ -35,8 +35,10 @@
               <td>{{$attendance_group->description}}</td>
               <td>{{$attendance_group->difficulty}}</td>
               <td>{{$attendance_group->GroupSchool->name}}</td>
-              <td>{{$attendance_group->school_id}}</td>
+              
               <td>
+                <p><strong>students count:</strong> {{count($attendance_group->GroupStudents)}}</p>
+                <hr>
                 @foreach ($attendance_group->GroupStudents as $student)
                     <table>
                       <td>{{$student->name}}</td>

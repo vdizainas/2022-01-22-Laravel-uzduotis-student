@@ -6,6 +6,8 @@ use App\Models\School;
 use App\Http\Requests\StoreSchoolRequest;
 use App\Http\Requests\UpdateSchoolRequest;
 
+use illuminate\Http\Requests;
+
 class SchoolController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class SchoolController extends Controller
      */
     public function index()
     {
-        //
+        $schools = School::all();
+        return view('school.index', ['schools' => $schools]);
     }
 
     /**
