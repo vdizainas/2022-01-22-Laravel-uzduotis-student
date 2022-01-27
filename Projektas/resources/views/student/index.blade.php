@@ -23,6 +23,7 @@
               <th>Name</th>
               <th>Surname</th>
               <th>Group ID</th>
+              <th>Group difficulty</th>
               <th>Photo</th>
               <th>Action</th>
             </tr>
@@ -34,6 +35,7 @@
                 <td>{{$student->surname}}</td>
                 {{-- <td>{{$student->group_id}}</td> --}}
                 <td>{{$student->studentGroup->name}}</td>
+                <td>{{$student->studentGroup->difficulty}}</td>
                 <td><img src="{{$student->image_url}}" width="100"/></td>
                 <td>
                   {{-- <div class="d-flex">

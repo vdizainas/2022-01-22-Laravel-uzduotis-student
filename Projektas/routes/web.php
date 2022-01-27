@@ -46,3 +46,6 @@ Route::prefix('school')->group(function() {
     Route::post('destroy/{school}', 'App\Http\Controllers\SchoolController@destroy')->name('school.destroy');
     Route::get('show/{school}', 'App\Http\Controllers\SchoolController@show')->name('school.show');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
